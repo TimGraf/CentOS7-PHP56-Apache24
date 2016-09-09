@@ -100,7 +100,7 @@ RUN sed -i \
 # -----------------------------------------------------------------------------
 RUN sed -i \
         -e '$ a xdebug.remote_enable=1' \
-        -e '$ a xdebug.remote_connect_back=1' \
+        -e '$ a xdebug.remote_port=9000' \
         -e '$ a xdebug.remote_handler=dbgp' \
         -e '$ a xdebug.remote_mode=req' \
         -e '$ a xdebug.remote_autostart=true' \
