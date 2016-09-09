@@ -46,6 +46,9 @@ RUN	yum --setopt=tsflags=nodocs -y install \
 	php56w-gd \
 	php56w-xml \
 	php56w-pecl-apcu \
+	php56w-pear \
+        php56w-pecl-xdebug \
+        php56w-process \
 	&& rm -rf /var/cache/yum/* \
 	&& yum clean all
 
