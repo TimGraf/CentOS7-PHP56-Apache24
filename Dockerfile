@@ -96,6 +96,17 @@ RUN sed -i \
 	/etc/httpd/conf/httpd.conf
 
 # -----------------------------------------------------------------------------
+# Configure Xdebug
+# -----------------------------------------------------------------------------
+RUN sed -i \
+        -e '$ a xdebug.remote_enable=1' \
+        -e '$ a xdebug.remote_connect_back=1' \
+        -e '$ a xdebug.remote_handler=dbgp' \
+        -e '$ a xdebug.remote_mode=req' \
+        -e '$ a xdebug.remote_autostart=true' \
+        /etc/php.d/xdebug.ini	
+
+# -----------------------------------------------------------------------------
 # Add default service users
 # -----------------------------------------------------------------------------
 RUN useradd -u 501 -d /var/www/app -m app \
