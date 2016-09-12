@@ -65,6 +65,8 @@ RUN sed -i \
 	-e 's~^ServerTokens OS$~ServerTokens Prod~g' \
 	-e 's~^DirectoryIndex \(.*\)$~DirectoryIndex \1 index.php~g' \
 	-e 's~^NameVirtualHost \(.*\)$~#NameVirtualHost \1~g' \
+	-e 's~^AllowOverride None$~AllowOverride All~g' \
+	-e 's~^AllowOverride none$~AllowOverride All~g' \
 	/etc/httpd/conf/httpd.conf
 
 # -----------------------------------------------------------------------------
